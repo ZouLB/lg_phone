@@ -1,0 +1,1 @@
+"use strict";loader.define(["pages/common/path"],function(a,n,t,e){var u={};u.queryData=function(n,t,e){bui.ajax({url:a[n],data:t}).then(function(a){e("success",a)},function(a,n){e("fail",a)})},e.exports=u});

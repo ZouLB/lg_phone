@@ -1,0 +1,152 @@
+
+<div class="bui-page">
+    <header class="bui-bar">
+        <div class="bui-bar-left">
+            <a class="bui-btn" onclick="bui.back()"><i class="icon-back"></i></a>
+        </div>
+        <div class="bui-bar-main">
+            常驻人口
+        </div>
+        <div class="bui-bar-right">
+        </div>
+    </header>
+    <main>
+        <div class="line-chart-div">
+            <div class="title">
+                <div class="item-title item-word">
+                    常驻人口数(万人)
+                </div>
+                <div class="item-title">
+                    <span class="num">477.74</span>
+                </div>
+                <div class="item-text item-time">
+                    截止时间：2018/10
+                </div>
+            </div>       
+        </div>
+        <div class="line-chart-div1 map-wrap">
+            <div class="bui-panel-main">
+                <div id="map-chart"></div>
+            </div>
+        </div>
+        <div class="line-chart-div1">
+            <h3 class="head-title">
+                常驻人口变化趋势
+            </h3>
+            <div class="bui-panel-main">
+                <div id="line-chart"></div>
+            </div> 
+        </div> 
+        <div class="line-chart-div1 modle-content">
+            <h3 class="head-title">
+               龙岗区常驻人口性别占比
+            </h3>
+            <div class="bui-panel-main bui-panel-sex">
+                <div class="bui-box sex-part">
+                    <span class="word color-gray">男性</span>
+                    <div id="tpl-list-man-content" class="span1"></div>
+                </div>
+                <script id="tpl-list-man" type="text/html">
+                    {{each manlistData as item index}} 
+                       {{if index  < (sex/10-1)}}
+                            <i class="iconfont icon-nanren" style="font-size: .24rem;color: #2EAAFD"></i>
+                       {{else}}
+                            <i class="iconfont icon-nanren" style="font-size: .24rem;color: #666666b3"></i>
+                       {{/if}}
+                    {{/each}}
+                    <span class="percent color-gray">
+                        {{sex}}%
+                    </span> 
+                </script>
+                <div class="bui-box woman-part">
+                    <span class="word color-gray">女性</span>
+                    <span id="tpl-list-woman-content" class="span1"></span>
+                </div>
+                <script id="tpl-list-woman" type="text/html">
+                    {{each manlistData as item index}} 
+                        {{if index  < (sex/10-1)}}
+                            <i class="iconfont icon-nvren" style="font-size: .24rem;color: #F9847B"></i>
+                        {{else}}
+                            <i class="iconfont icon-nvren" style="font-size: .24rem;color: #666666b3"></i>
+                        {{/if}}
+                    {{/each}} 
+                    <span class="percent color-gray">
+                        {{sex}}%
+                    </span>
+                </script>
+            </div> 
+        </div>
+        <div class="line-chart-div1 modle-content">
+            <div class="bui-box">
+                <div class="head-title span1">
+                    龙岗区常驻人口年龄分布
+                </div>
+            </div>
+            <div class="bui-panel-main">
+                <div id="chart"></div>
+            </div>
+            
+        </div> 
+        <div class="line-chart-div1 modle-content">
+            <div class="bui-box">
+                <div class="head-title span1 inflow">
+                   龙岗区常驻人口来源分布
+                </div>
+                <ul class="bui-group">
+                    <li class="bui-btn primary province">省内</li><li class="bui-btn primary-border outProvince">省外</li>
+                </ul>
+            </div>
+            <div class="bui-panel-main">
+                <div id="bar-chart"></div>
+            </div> 
+        </div> 
+        <div class="tree-rank">
+            <div class="bui-panel lists-panel">
+                <h3 class="head-title">
+                    各街道常驻人口
+                </h3>
+                <div class="bui-panel-main">
+                    <ul class="bui-list" id="scrollList">
+                        <li class="bui-btn btn-item bui-box">
+                            <div class="span1" style="text-align:left">
+                                    排行
+                            </div>
+                            <div class="span1">
+                                    街道
+                            </div>
+                            <div class="span1" style="text-align:right">
+                                    人口总数
+                            </div>
+                        </li>
+                        <div id="tpl-list-resident-content">
+                            
+                        </div>
+                        <script id="tpl-list-resident" type="text/html">
+                            {{each listData as item index}} 
+                                <li class="bui-btn btn-item bui-box line">
+                                    <div class="span1" style="text-align:left">
+                                        <span class="tip">{{index+1}}</span>
+                                    </div>
+                                    <div class="span1" >
+                                        {{item[0]}}
+                                    </div>
+                                    <div class="span1" style="text-align:right">
+                                        {{item[1]}}万
+                                        <!--{{if index < 3}}
+                                            <i class="iconfont icon-shuzhishangsheng" style="color: red"></i>
+                                        {{else}} 
+                                            <i class="iconfont icon-shuzhixiajiang"></i>
+                                        {{/if}}-->
+                                    </div>                            
+                                </li>
+                            {{/each}} 
+                        </script>
+                    </ul>
+                </div>
+            </div>           
+        </div>
+    </main>
+    <footer>
+        
+    </footer>
+</div>

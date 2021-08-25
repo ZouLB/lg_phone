@@ -1,0 +1,257 @@
+
+<div class="bui-page">
+    <header class="bui-bar">
+        <div class="bui-bar-left">
+            <a class="bui-btn" onclick="bui.back()"><i class="icon-back"></i></a>
+        </div>
+        <div class="bui-bar-main">
+            职住分布
+        </div>
+        <div class="bui-bar-right"></div>
+    </header>
+    <main>
+        <div class="line-chart-div">
+            <div class="title">
+                <div class="item-title item-word">
+                    通勤人员数(万人)
+                </div>
+                <div class="item-title">
+                    <span class="num">506.27</span>
+                </div>
+                <div class="item-text item-time">
+                    截止时间：2018/10
+                </div>
+            </div>       
+        </div>
+        <div id="tpl-list-content">
+			<div class="line-chart-div1 map-wrap">
+	            <div class="father-child-nav">
+	            	<div class="item-nav father-nav item-nav-active">
+	            		<div class="nav-content">龙岗区</div>
+	            		<div class="right-item-nav"></div>
+	            	</div> 
+	            	<div class="item-nav child-nav">
+	            		<div class="left-item-nav"></div>
+	            		<div class="nav-content">街道</div>
+	            		<div class="right-item-nav"></div>
+	            	</div>
+	            </div>
+	            <ul class="bui-group map-group">
+                    <li class="bui-btn primary province">流出</li><li class="bui-btn primary-border outProvince">流入</li>
+                </ul>
+	            <div class="bui-panel-main map-chart">
+	                <div id="chart"></div>
+	            </div>
+	        </div>
+	        <div class="line-chart-div1">
+	            <div class="bui-box">
+	                <div class="head-title span1">
+	                     龙岗区居民人口迁徙
+	                </div>
+	            </div>
+	            <div id="list-wrap">
+	            	
+	            </div>
+	        </div>
+	        <div class="line-chart-div1 modle-content">
+	            <div class="bui-box">
+	                <div class="head-title span1">
+	                     龙岗区居民通勤概况
+	                </div>
+	            </div>
+	            <div class="bui-fluid menu-item bui-btn work-item">
+		        	<div class="span3">
+			        	<img src="./images/icon_live_work_1.png" class="work-img">
+		        	</div>
+		        	<div class="span9 work-pl">
+		        		<div class="bui-fluid">
+		        			<div class="span12 item wtitle">
+				        		龙岗区居住且工作人口
+				        	</div>
+				        	<div class="span8">
+				        		<div class="item bui-box-align-left num1-parent num1-parent">
+				        			<span class="item-unit item">人口总数:</span>
+				                    <span class="num1" id="work-liwi">391.33</span>
+				                    <span class="item-unit item">万人</span>
+				               </div>
+				        	</div>
+				        	<div class="span3">
+				                <div class="item bui-box-align-left num1-parent num1-parent">
+				                    <span class="item-unit item">占比:</span>
+				                    <span class="num1" id="liwi-per">77%</span>
+				                </div>
+				        	</div>
+		        		</div>
+		        	</div>
+		       	</div>
+		       	<div class="bui-fluid menu-item bui-btn work-item">
+		        	<div class="span3">
+			        	<img src="./images/icon_live_work_2.png" class="work-img">
+		        	</div>
+		        	<div class="span9 work-pl">
+		        		<div class="bui-fluid">
+		        			<div class="span12 item wtitle">
+				        		龙岗区居住外区域工作人口
+				        	</div>
+				        	<div class="span8">
+				        		<div class="item bui-box-align-left num1-parent num1-parent">
+				        			<span class="item-unit item">人口总数:</span>
+				                    <span class="num1" id="work-liwo">51.63</span>
+				                    <span class="item-unit item">万人</span>
+				               </div>
+				        	</div>
+				        	<div class="span3">
+				                <div class="item bui-box-align-left num1-parent num1-parent">
+				                    <span class="item-unit item">占比:</span>
+				                    <span class="num1" id="liwo-per">10%</span>
+				                </div>
+				        	</div>
+		        		</div>
+		        	</div>
+		       	</div>
+		       	<div class="bui-fluid menu-item bui-btn work-item">
+		        	<div class="span3">
+			        	<img src="./images/icon_live_work_3.png" class="work-img">
+		        	</div>
+		        	<div class="span9 work-pl">
+		        		<div class="bui-fluid">
+		        			<div class="span12 item wtitle">
+				        		外区域居住龙岗区工作人口
+				        	</div>
+				        	<div class="span8">
+				        		<div class="item bui-box-align-left num1-parent num1-parent">
+				        			<span class="item-unit item">人口总数:</span>
+				                    <span class="num1" id="work-lowi">63.30</span>
+				                    <span class="item-unit item">万人</span>
+				               </div>
+				        	</div>
+				        	<div class="span3">
+				                <div class="item bui-box-align-left num1-parent num1-parent">
+				                    <span class="item-unit item">占比:</span>
+				                    <span class="num1" id="lowi-per">13%</span>
+				                </div>
+				        	</div>
+		        		</div>
+		        	</div>
+		       	</div>
+	        </div>
+        </div>
+        
+        <script id="ul-list" type="text/html">
+        	<div class="bui-panel-main">
+                <ul id="scrollList">
+                    <li class="bui-btn bui-box btn-item">
+                        <div style="text-align:left;width: .66rem;">
+                                排行
+                        </div>
+                        <div class="span1">
+                                居住
+                        </div>
+                        <div class="span1">
+                                工作
+                        </div>
+                        <div style="text-align:right; width: .8rem;">
+                                人口数
+                        </div>
+                        <div class="span1" style="text-align:right">
+                                人口占比	
+                        </div>
+                    </li>
+                    {{each lineData as item index}} 
+                        <li class="bui-btn bui-box btn-item line">
+                            <div style="text-align:left; width: .66rem;">
+                                <span class="tip">{{index+1}}</span>
+                            </div>
+                            <div class="span1" >
+                                {{item[0]}}
+                            </div>
+                            <div class="span1" >
+                                {{item[1]}}
+                            </div>
+                            <div style="text-align:right; width: .8rem;">
+                                {{item[4]}}万
+                            </div>
+                            <div class="span1" style="text-align:right">
+                                {{item[3]}}%
+                                <!--{{if index < 3}}
+                                    <i class="iconfont icon-shuzhishangsheng" style="color: red;"></i>
+                                {{else}} 
+                                    <i class="iconfont icon-shuzhixiajiang"></i>
+                                {{/if}}-->
+                            </div>                            
+                        </li>
+                    {{/each}} 
+                </ul>
+            </div>
+        </script>
+        
+        <script id="tpl-list" type="text/html">
+            {{each listData as list index}}
+                {{if index == 0}}
+                    <div class="bui-panel  lists-panel">
+                {{else}}
+                    <div class="bui-panel  lists-panel " style="margin-top: .2rem">
+                {{/if}}
+                
+                    <div class="bui-box">
+                        <div  class='head-title span1  '>
+                            {{list.name}}
+                         </div>
+                    </div>
+                    <div class="bui-box explaint-content">
+                        <div  class='span1'>
+                            <span class="word">人口总数:</span><span class="num">{{list.num}}</span><span class="word">万人<span>
+                        </div>
+                        <div  class='span1'>
+                            <span class="word">占比:</span><span class="num">{{list.percent}}%</span>
+                        </div>
+                    </div>
+                    <div class="bui-panel-main">
+                        <ul class="bui-list" id="scrollList">
+                            <li class="bui-btn bui-box btn-item">
+                                <div class="span1" style="text-align:left">
+                                        排行
+                                </div>
+                                <div class="span1">
+                                        居住
+                                </div>
+                                <div class="span1">
+                                        工作
+                                </div>
+                                <div class="span1" style="text-align:right">
+                                        人口占比
+                                </div>
+                            </li>
+                            {{each list.rank as item index}} 
+                            	{{if index < 5}}
+                                <li class="bui-btn bui-box btn-item line">
+                                    <div class="span1" style="text-align:left">
+                                        <span class="tip">{{index+1}}</span>
+                                    </div>
+                                    <div class="span1" >
+                                        {{item[0]}}
+                                    </div>
+                                    <div class="span1" >
+                                        {{item[1]}}
+                                    </div>
+                                    <div class="span1" style="text-align:right">
+                                        {{item[3]}}%
+                                        {{if index < 3}}
+                                            <i class="iconfont icon-shuzhishangsheng" style="color: red;display: none;"></i>
+                                        {{else}} 
+                                            <i class="iconfont icon-shuzhixiajiang" style="display: none;"></i>
+                                        {{/if}}
+                                    </div>                            
+                                </li>
+                                {{/if}}
+                            {{/each}} 
+                        </ul>
+                    </div>
+                </div> 
+            {{/each}}    
+        </script>          
+    </main>
+    <footer>
+        
+    </footer>
+</div>
