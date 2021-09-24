@@ -1,0 +1,169 @@
+
+<div class="bui-page">
+    <header class="bui-bar">
+        <div class="bui-bar-left">
+            <a class="bui-btn" onclick="bui.back()"><i class="icon-back"></i></a>
+        </div>
+        <div class="bui-bar-main" style="padding:.2rem">
+            <ul id="head-head" class="bui-nav" style="width:90%">
+                <li class="bui-btn active tab-item">准实时人口</li>
+                <li class="bui-btn tab-item">月总人口</li>
+            </ul>
+        </div>
+        <div class="bui-bar-right"></div>
+    </header>
+    <main>
+        <div id="tabRealtime" class="bui-tab">
+            
+            <div class="bui-tab-main">
+                <ul>
+                    <li>
+                            <div class="line-chart-div">
+                                    <div class="title">
+                                        <div class="item-title item-word">
+                                            总人数(万人)
+                                        </div>
+                                        <div class="item-title">
+                                            <span class="num" id="changeNum">477.46</span>
+                                        </div>
+                                        <div class="item-text item-time" id="changeTime">
+                                            截止时间：2018/12/28
+                                        </div>
+                                    </div>       
+                                </div>
+                                <div>
+                                <div class="line-chart-div1">
+                                        <h3 class="head-title">
+                                            准实时人口变化趋势
+                                        </h3>
+                                        <div class="bui-panel-main">
+                                            <div id="line-chart"></div>
+                                        </div> 
+                                    </div> 
+                                </div>    
+                                <div class="tree-rank">
+                                    <div class="bui-panel lists-panel">
+                                        <h3 class="head-title">
+                                            各街道准实时人口
+                                        </h3>
+                                        <div class="bui-panel-main">
+                                            
+                                            <ul class="bui-list" id="scrollList">
+                                                <li class="bui-btn btn-item bui-box">
+                                                    <div class="span1" style="text-align:left">
+                                                            排行
+                                                    </div>
+                                                    <div class="span1">
+                                                            街道
+                                                    </div>
+                                                    <div class="span1" style="text-align:right">
+                                                            人口总数
+                                                    </div>
+                                                </li>
+                                                <div id="tpl-list-realtime-content">
+                                                    
+                                                </div>
+                                                <script id="tpl-list-realtime" type="text/html">
+                                                    {{each listData as item index}} 
+                                                        <li class="bui-btn btn-item bui-box line">
+                                                            <div class="span1" style="text-align:left">
+                                                                <span class="tip">{{index+1}}</span>
+                                                            </div>
+                                                            <div class="span1" >
+                                                                {{item[0]}}
+                                                            </div>
+                                                            <div class="span1" style="text-align:right">
+                                                                {{item[1]}}
+                                                                <!--{{if index < 3}}
+                                                                    <i class="iconfont icon-shuzhishangsheng" style="color: red"></i>
+                                                                {{else}} 
+                                                                    <i class="iconfont icon-shuzhixiajiang"></i>
+                                                                {{/if}}-->
+                                                            </div>                            
+                                                        </li>
+                                                    {{/each}} 
+                                                </script>
+                                            </ul>
+                                        </div>
+                                    </div>           
+                                </div>
+                    </li>
+                    <li>
+                            <div class="line-chart-div">
+                                    <div class="title">
+                                        <div class="item-title item-word">
+                                            总人数(万人)
+                                        </div>
+                                        <div class="item-title">
+                                            <span class="num" id="monthTotal">2168.18</span>
+                                        </div>
+                                        <div class="item-text item-time">
+                                            截止时间：2018/10
+                                        </div>
+                                    </div>       
+                                </div>
+                                <div>
+                                <div class="line-chart-div1">
+                                        <h3 class="head-title">
+                                            龙岗区当月每日人口变化趋势
+                                        </h3>
+                                        <div class="bui-panel-main">
+                                            <div id="line-chart-month"></div>
+                                        </div> 
+                                    </div> 
+                                </div>    
+                                <div class="tree-rank">
+                                    <div class="bui-panel lists-panel">
+                                        <h3 class="head-title">
+                                            龙岗区月总人口分布
+                                        </h3>
+                                        <div class="bui-panel-main">
+                                            
+                                            <ul class="bui-list" id="scrollList">
+                                                <li class="bui-btn btn-item bui-box">
+                                                    <div class="span1" style="text-align:left">
+                                                            排行
+                                                    </div>
+                                                    <div class="span1">
+                                                            街道
+                                                    </div>
+                                                    <div class="span1" style="text-align:right">
+                                                            人口总数
+                                                    </div>
+                                                </li>
+                                                <div id="tpl-list-content-month">
+                                                    
+                                                </div>
+                                                <script id="tpl-list-month" type="text/html">
+                                                    {{each listData as item index}} 
+                                                        <li class="bui-btn btn-item bui-box line">
+                                                            <div class="span1" style="text-align:left">
+                                                                <span class="tip">{{index+1}}</span>
+                                                            </div>
+                                                            <div class="span1" >
+                                                                {{item[0]}}
+                                                            </div>
+                                                            <div class="span1" style="text-align:right">
+                                                                {{item[1]}}
+                                                                <!--{{if index < 3}}
+                                                                    <i class="iconfont icon-shuzhishangsheng" style="color: red"></i>
+                                                                {{else}} 
+                                                                    <i class="iconfont icon-shuzhixiajiang"></i>
+                                                                {{/if}}-->
+                                                            </div>                            
+                                                        </li>
+                                                    {{/each}} 
+                                                </script>
+                                            </ul>
+                                        </div>
+                                    </div>           
+                                </div> 
+                    </li>
+                <ul>
+            </ul>
+        </ul></div>                
+    </div></main>
+    <footer>
+        
+    </footer>
+</div>

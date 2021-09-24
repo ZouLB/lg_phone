@@ -1,0 +1,1 @@
+"use strict";window.router=bui.router(),bui.ready(function(){router.init({id:"#bui-router"}),function(){bui.btn({id:"#bui-router",handle:".bui-btn,a"}).load(),$("#bui-router").on("click",".btn-back",function(i){bui.back()})}()});

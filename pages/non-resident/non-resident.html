@@ -1,0 +1,116 @@
+
+<div class="bui-page">
+    <header class="bui-bar">
+        <div class="bui-bar-left">
+            <a class="bui-btn" onclick="bui.back()"><i class="icon-back"></i></a>
+        </div>
+        <div class="bui-bar-main">
+            非常驻人口
+        </div>
+        <div class="bui-bar-right"></div>
+    </header>
+    <main>
+        <div class="line-chart-div">
+            <div class="title">
+                <div class="item-title item-word">
+                    非常驻人口数(万人)
+                </div>
+                <div class="item-title">
+                    <span class="num">1690.44</span>
+                </div>
+                <div class="item-text item-time">
+                    截止时间：2018/10
+                </div>
+            </div>       
+        </div>
+        <div class="line-chart-div1">
+            <h3 class="head-title">
+                非常驻人口变化趋势
+            </h3>
+            <div class="bui-panel-main">
+                <div id="line-chart"></div>
+            </div> 
+        </div> 
+        <div class="line-chart-div1 modle-content">
+            <div class="bui-box">
+                <div class="head-title span1">
+                    各街道非常驻人口
+                </div>
+            </div>
+            <div class="bui-panel-main">
+                <div id="no-resident-chart"></div>
+            </div>
+        </div> 
+        <div class="line-chart-div1 modle-content">
+            <div class="bui-box">
+                <div class="head-title span1">
+                    驻留时间占比
+                </div>
+            </div>
+            <div class="bui-panel-main">
+                <div id="chart"></div>
+            </div>
+        </div> 
+        <div class="tree-rank">
+            <div class="bui-panel lists-panel">
+                <div class="bui-box">
+                    <div class="head-title span1 inflow">
+                        非常驻人口来源地市
+                    </div>
+                    <ul class="bui-group">
+                        <li class="bui-btn primary btn-border province">省内</li>
+                        <li class="bui-btn btn-border">国内</li>
+                        <li class="bui-btn btn-border">境外</li>
+                    </ul>
+                </div>
+                <div class="bui-panel-main">
+                    <ul class="bui-list" id="scrollList">
+                        <li class="bui-btn btn-item bui-box">
+                            <div style="text-align:left;width:.7rem">
+                                    排行
+                            </div>
+                            <div class="span1">
+                                    地市
+                            </div>
+                            <div class="span1">
+                                    地区
+                            </div>
+                            <div style="text-align:right;width:1.1rem">
+                                    人口总数
+                            </div>
+                        </li>
+                        <div id="tpl-list-nonResident-content">
+                            
+                        </div>
+                        <script id="tpl-list-nonResident" type="text/html">
+                            {{each listData as item index}} 
+                                <li class="bui-btn btn-item bui-box line">
+                                    <div style="text-align:left;width: .7rem;">
+                                        <span class="tip">{{index+1}}</span>
+                                    </div>
+                                    <div class="span1" >
+                                        {{item[0]}}
+                                    </div>
+                                    <div class="span1" >
+                                        {{item[1]}}
+                                    </div>
+                                    <div style="text-align:right;width: 1.1rem;">
+                                        {{item[2]}}万
+                                        <!--{{if index < 3}}
+                                            <i class="iconfont icon-shuzhishangsheng" style="color: red"></i>
+                                        {{else}} 
+                                            <i class="iconfont icon-shuzhixiajiang"></i>
+                                        {{/if}}-->
+                                    </div>                            
+                                </li>
+                            {{/each}} 
+                        </script>
+                    </ul>
+                </div>
+            </div>           
+        </div>
+    </main>
+    <footer>
+        
+    </footer>
+</div>
